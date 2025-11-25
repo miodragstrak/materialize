@@ -82,10 +82,6 @@ The Fabrication Agent performs:
 ---
 
 ## **B. Knowledge Layer (DKG + JSON-LD)**
-We extend the DKG Node with:
-- `ProofOfMake` schema (`schemas/proof-of-make.json`)
-- commit flow from AI agent
-- machine-level provenance representation
 
 📄 Example JSON-LD files: [`examples/`](examples/)
 

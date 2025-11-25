@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MaterializePoMManufacture",
+  "@id": "urn:mat:product:${productId}:v1",
+  "name": "DKG Demo Product",
+  "manufacturer": "Materialize CNC Workshop",
+  "originLocation": {
+    "@type": "Place",
+    "name": "${originLocation}"
+  },
+  "manufactureTimestamp": "${timestamp}",
+  "description": "Initial Proof-of-Make asset for product ${productId}.",
+  "designReference": "solana:${mintAddress}",
+  "machineId": "CNC-${machineId}",
+  "logHash": "sha256:${machineLogHash}"
+}

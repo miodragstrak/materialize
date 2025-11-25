@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@id": "urn:verification:${ual}:attempt:${timestamp}",
+  "@type": "VerificationEvent",
+  "ualChecked": "${ual}",
+  "claimedLocation": {
+    "@type": "Place",
+    "name": "${claimedLocation}"
+  },
+  "verifiedLocation": {
+    "@type": "Place",
+    "name": "${verifiedLocation}"
+  },
+  "authentic": "${true_or_false}",
+  "timestamp": "${timestamp}",
+  "description": "Verification attempt for installed Materialize-manufactured part.",
+  "previous": {
+    "@id": "${previousKA}"
+  }
+}
