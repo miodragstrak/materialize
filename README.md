@@ -77,7 +77,7 @@ The Fabrication Agent performs:
 - Machine log verification
 - Publishing to DKG
 
-📄 Documentation: [`architecture/mcp-agent.md`](architecture/mcp-agent.md)
+📄 Documentation: [`architecture/agent.md`](architecture/agent.md)
 
 ---
 
@@ -89,12 +89,9 @@ The Fabrication Agent performs:
 
 ## **C. Trust Layer (NeuroWeb / Polkadot)**
 The DKG anchors:
-- hash of fabrication record  
-- hash of machine log  
 - timestamp  
-into the Polkadot/NeuroWeb network.
 
-📄 Documentation: [`architecture/trust-layer.md`](architecture/trust-layer.md)
+📄 Documentation: [`architecture/system-overview.md`](architecture/system-overview.md)
 
 ---
 
@@ -104,13 +101,12 @@ into the Polkadot/NeuroWeb network.
 materialize-dkg/
 │
 ├── my_dkg_node/
-│   └── dkg-node/               ← forked DKG node (custom schema)
+│   │
+│   └── dkg-node/               ← forked DKG node
 │
-├── ui/                         ← Materialize UI (NFT → Maker → Object)
+├── materialize-ui/             ← Materialize UI (NFT → Maker → Object)
 │
-├── agents/
-│   ├── fabrication-agent.js    ← MCP agent logic
-│   └── prompts/
+├── agents/                     ← MCP agent logic
 │
 ├── examples/                   ← JSON-LD fabrications
 │
@@ -118,7 +114,9 @@ materialize-dkg/
 │
 ├── tokenomics/                 ← early protocol economics
 │
-└── video/                      ← demo video (≤ 5 minutes)
+├── video/                      ← demo video (≤ 5 minutes)
+│
+└── picture/                    ← screenshots
 ```
 
 ---
@@ -131,43 +129,11 @@ materialize-dkg/
 
 ```
 cd my_dkg_node/dkg-node
-npm install
-```
-
-### Run development node:
-
-```
-npm run dev
-```
-
-### Start local DKG:
-
-```
-npm start
-```
-
-This instance includes our **Proof of Make** schema.
-
----
-
-## **B. Fabrication Agent (MCP)**
-
-### Install:
-
-```
-cd agents
-npm install
-```
-
-### Run agent:
-
-```
-node fabrication-agent.js
+dkg-cli run-dev
 ```
 
 The agent communicates with:
-- UI  
-- CNC simulator  
+- UI   
 - DKG node  
 
 ---
@@ -177,17 +143,9 @@ The agent communicates with:
 ### Install:
 
 ```
-cd ui
-npm install
-```
-
-### Start:
-
-```
+cd materilize-ui
 npm run dev
 ```
-
----
 
 # 🛠 6. Demo Instructions
 
@@ -195,18 +153,11 @@ npm run dev
 (in `my_dkg_node/dkg-node/`)
 
 ```
-npm start
-```
-
-### 2. Start Agent  
-(in `agents/`)
-
-```
-node fabrication-agent.js
+dkg-cli status (check if all services are running)
 ```
 
 ### 3. Start UI  
-(in `ui/`)
+(in `materialize-ui/`)
 
 ```
 npm run dev
@@ -215,19 +166,57 @@ npm run dev
 ### 4. Open browser:  
 `http://localhost:3000`
 
-### 5. Select an NFT
+### 5. Publish - Creating the initial Manufacturing Knowledge Asset (KA)
 
-### 6. Click **Materialize**
+- Enter product details
+- Click “Generate Manufacturing KA Prompt”
+- Copy the generated prompt
 
-### 7. CNC engraves the pendant  
-(physical machine or simulation)
+Picture 1
 
-### 8. Agent collects machine logs
+- Paste the prompt into the MCP Fabrication Agent
+- Press Enter
+- The agent publishes the MaterializePoMManufacture KA
+- A new UAL appears
 
-### 9. Agent publishes JSON-LD  
-to local DKG node
+Picture 2
 
-### 10. UI displays verifiable DKG URI
+- Copy the UAL
+- Paste it into the “Generate QR” section
+- A QR code linked to the Manufacturing KA is generated
+
+Picture 3
+
+### 6. Update - Adding installation or lifecycle information
+
+- Enter installation details
+- Click “Generate Installation KA Prompt”
+- Click Copy Prompt
+
+Picture 4
+
+- Paste the prompt into the agent
+- Press Enter
+- The agent publishes a new VerificationEvent KA
+- A new UAL appears, referencing the previous KA
+
+Picture 5
+
+### 7. Verify - Checking authenticity and location
+
+- Upload or choose a picture of the QR code containing the UAL
+- Enter claimed location
+- Click Generate Verification Prompt
+- Copy the prompt
+
+Picture 6
+
+- Paste the verification prompt into the agent
+- Press Enter
+- The agent fetches the original KA from the DKG
+- Compares claimed location with ground-truth metadata
+
+Picture 7
 
 ---
 
@@ -235,31 +224,27 @@ to local DKG node
 
 Examples included:
 
-- `proof-of-make.jsonld`  
-- `machine-log.json`  
-- `nft-metadata.json`
+- `examples/publish.jsonld`  
+- `examples/update.json`  
+- `examples/verify.json`
 
 All located in:  
 📁 [`/examples`](examples/)
 
 ---
 
-# 🔗 8. x402 Integration (Optional)
+# 🔗 8. x402 Integration
 
-Not fully implemented in this prototype,  
-but the documentation explains how x402 can be added  
-for cross-domain interoperability between manufacturing proofs.
-
-📄 See `architecture/x402.md`
+Not implemented in this prototype.
 
 ---
 
-# 📊 9. Early Tokenomics (Optional)
+# 📊 9. Early Tokenomics
 
 Located in:  
 📁 `tokenomics/`
 
-Covers:
+Tokenomics part will cover:
 - Maker node earning model  
 - Proof-of-Make transaction fees  
 - License royalties  
@@ -284,4 +269,3 @@ Covers:
 Decentralized manufacturing.
 Verifiable production.
 Fighting Fake Fabrication.
-

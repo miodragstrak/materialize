@@ -1,20 +1,11 @@
 {
-  "@context": "https://schema.org",
-  "@id": "urn:verification:${ual}:attempt:${DateNow}",
+  "@context": "http://schema.org/",
+  "@id": "urn:verification:did:dkg:otp:20430/0xcdb28e93ed340ec10a71bba00a31dbfcf1bd5d37/403540:attempt:1764134360898",
   "@type": "VerificationEvent",
-  "ualChecked": "${ual}",
-  "claimedLocation": {
-    "@type": "Place",
-    "name": "${claimedLocation}"
-  },
-  "verifiedLocation": {
-    "@type": "Place",
-    "name": "${verifiedLocationFromDKG}"
-  },
-  "authentic": "${true_or_false}",
-  "timestamp": "${DateNow}",
+  "ualChecked": "did:dkg:otp:20430/0xcdb28e93ed340ec10a71bba00a31dbfcf1bd5d37/403540",
+  "claimedLocation": "Niš, Serbia",
+  "verifiedLocation": "<VALUE FROM DKG>",
+  "authentic": "<true | false>",
   "description": "Verification attempt for installed part.",
-  "previous": {
-    "@id": "${previousInstallationKA}"
-  }
+  "previous": { "@id": "<the KA that contains installationLocation>" }
 }

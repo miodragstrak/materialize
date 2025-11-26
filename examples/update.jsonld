@@ -1,20 +1,12 @@
 {
   "@context": "https://schema.org",
-  "@id": "urn:verification:${ual}:attempt:${timestamp}",
-  "@type": "VerificationEvent",
-  "ualChecked": "${ual}",
-  "claimedLocation": {
-    "@type": "Place",
-    "name": "${claimedLocation}"
+  "@type": "MaterializePoMLocationUpdate",
+  "@id": "urn:mat:product:xyz:111.222.333:v2",
+  "previous": { "@id": "urn:mat:product:xyz:111.222.333:v1" },
+  "productId": "xyz:111.222.333",
+  "installationLocation": {
+    "name": "Niš, Serbia"
   },
-  "verifiedLocation": {
-    "@type": "Place",
-    "name": "${verifiedLocation}"
-  },
-  "authentic": "${true_or_false}",
-  "timestamp": "${timestamp}",
-  "description": "Verification attempt for installed Materialize-manufactured part.",
-  "previous": {
-    "@id": "${previousKA}"
-  }
+  "installationTimestamp": "2025-11-22 20:04:36",
+  "description": "Product installed at customer location."
 }

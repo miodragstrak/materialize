@@ -1,16 +1,14 @@
 {
-  "@context": "https://schema.org",
-  "@type": "MaterializePoMManufacture",
-  "@id": "urn:mat:product:${productId}:v1",
-  "name": "DKG Demo Product",
-  "manufacturer": "Materialize CNC Workshop",
-  "originLocation": {
-    "@type": "Place",
-    "name": "${originLocation}"
-  },
-  "manufactureTimestamp": "${timestamp}",
-  "description": "Initial Proof-of-Make asset for product ${productId}.",
-  "designReference": "solana:${mintAddress}",
-  "machineId": "CNC-${machineId}",
-  "logHash": "sha256:${machineLogHash}"
-}
+     "@context": "https://schema.org",
+     "@type": "MaterializePoMManufacture",
+     "@id": "urn:mat:product:abc:.444.555.666:v1",
+     "name": "DKG Demo Product",
+     "manufacturer": "Materialize CNC Workshop",
+
+
+     "originLocation": {
+       "name": "Belgrade, Serbia"
+     },
+     "manufactureTimestamp": "2025-11-22 20:04:36",
+     "description": "Initial Proof-of-Make asset for product abc:.444.555.666."
+   }
