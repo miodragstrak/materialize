@@ -40,7 +40,9 @@ There is no standardized way for machines to produce verifiable outputs.
 
 ---
 
-# 2. What Materialize Does
+# 🟨 2. What Materialize Does
+
+![alt text](image.png)
 
 Materialize ties **digital ownership** to **verified physical creation**.
 
@@ -248,8 +250,8 @@ Tokenomics part will cover:
 
 # 👤 10. Team
 
-**Nenad Dimitrovski** — CNC / Open Source Engineer  
-**Miodrag Strak** — Product, Strategy & Architecture
+**Nenad Dimitrovski** - CNC / Open Source Engineer  
+**Miodrag Strak** - Product, Strategy & Architecture
 
 ---
 
