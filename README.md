@@ -1,3 +1,5 @@
+![alt text](materialize-new.gif)
+
 # Materialize - Fighting Fake Production on the OriginTrail DKG
 ## Fighting Fake Fabrication with AI + Blockchain
 
