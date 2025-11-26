@@ -1,13 +1,9 @@
-# 🟣 Materialize – Decentralized Manufacturing (DeMan) on the OriginTrail DKG
-### Fighting Fake Fabrication with AI + Blockchain + Verified Machines
+# Materialize - Fighting Fake Production on the OriginTrail DKG
+## Fighting Fake Fabrication with AI + Blockchain
 
-Materialize is a decentralized manufacturing layer that connects digital assets  
-(NFTs, 3D models, licenses) with **real-world production**,  
-verified and logged on the **OriginTrail Decentralized Knowledge Graph (DKG)**.
+Materialize is a decentralized manufacturing layer that connects digital assets (NFTs, 3D models, licenses) with **real-world production**, verified and logged on the **OriginTrail Decentralized Knowledge Graph (DKG)**.
 
-We demonstrate how the DKG’s **Agent Layer → Knowledge Layer → Trust Layer**  
-can be used to verify the fabrication of a physical object,  
-creating “Proof-of-Make” — a new trust primitive for manufacturing.
+We demonstrate how the DKG’s **Agent Layer → Knowledge Layer → Trust Layer** can be used to verify the fabrication of a physical object, creating “Proof-of-Make” — a new trust primitive for manufacturing.
 
 This repository contains:
 - A fork of the DKG Edge Node (with added manufacturing schema)
@@ -44,7 +40,7 @@ There is no standardized way for machines to produce verifiable outputs.
 
 ---
 
-# 🟪 2. What Materialize Does
+# 2. What Materialize Does
 
 Materialize ties **digital ownership** to **verified physical creation**.
 
@@ -71,19 +67,17 @@ Materialize uses all 3 layers of the OriginTrail stack.
 
 ## **A. Agent Layer (MCP)**
 The Fabrication Agent performs:
-- NFT metadata retrieval
-- Maker (machine) selection
+- Knowledge Assets retrieval
 - Manufacturing param generation
-- Machine log verification
 - Publishing to DKG
 
-📄 Documentation: [`architecture/agent.md`](architecture/agent.md)
+📄 Documentation: [`architecture/agent.md`](https://github.com/miodragstrak/materialize/blob/master/architecture/system-overview.md)
 
 ---
 
 ## **B. Knowledge Layer (DKG + JSON-LD)**
 
-📄 Example JSON-LD files: [`examples/`](examples/)
+📄 Example JSON-LD files: [`examples/`](https://github.com/miodragstrak/materialize/tree/master/examples)
 
 ---
 
@@ -91,7 +85,7 @@ The Fabrication Agent performs:
 The DKG anchors:
 - timestamp  
 
-📄 Documentation: [`architecture/system-overview.md`](architecture/system-overview.md)
+📄 Documentation: [`architecture/system-overview.md`](https://github.com/miodragstrak/materialize/blob/master/architecture/system-overview.md)
 
 ---
 
@@ -138,7 +132,7 @@ The agent communicates with:
 
 ---
 
-## **C. Materialize UI**
+## **B. Materialize UI**
 
 ### Install:
 
@@ -149,74 +143,74 @@ npm run dev
 
 # 🛠 6. Demo Instructions
 
-### 1. Start DKG node  
+## 1. Start DKG node  
 (in `my_dkg_node/dkg-node/`)
 
 ```
 dkg-cli status (check if all services are running)
 ```
 
-### 3. Start UI  
+## 2. Start UI  
 (in `materialize-ui/`)
 
 ```
 npm run dev
 ```
 
-### 4. Open browser:  
+## 3. Open browser:  
 `http://localhost:3000`
 
-### 5. Publish - Creating the initial Manufacturing Knowledge Asset (KA)
+## 4. Publish - Creating the initial Manufacturing Knowledge Asset (KA)
 
 - Enter product details
 - Click “Generate Manufacturing KA Prompt”
 - Copy the generated prompt
 
-Picture 1
+![Picture 1](https://github.com/miodragstrak/materialize/blob/master/pictures/publish-part1.png)
 
 - Paste the prompt into the MCP Fabrication Agent
 - Press Enter
 - The agent publishes the MaterializePoMManufacture KA
 - A new UAL appears
 
-Picture 2
+![Picture 2](https://github.com/miodragstrak/materialize/blob/master/pictures/publish-part2.png)
 
 - Copy the UAL
 - Paste it into the “Generate QR” section
 - A QR code linked to the Manufacturing KA is generated
 
-Picture 3
+![Picture 3](https://github.com/miodragstrak/materialize/blob/master/pictures/publish-part3.png)
 
-### 6. Update - Adding installation or lifecycle information
+### 5. Update - Adding installation or lifecycle information
 
 - Enter installation details
 - Click “Generate Installation KA Prompt”
 - Click Copy Prompt
 
-Picture 4
+![Picture 4](https://github.com/miodragstrak/materialize/blob/master/pictures/update-part1.png)
 
 - Paste the prompt into the agent
 - Press Enter
 - The agent publishes a new VerificationEvent KA
 - A new UAL appears, referencing the previous KA
 
-Picture 5
+![Picture 5](https://github.com/miodragstrak/materialize/blob/master/pictures/update-part2.png)
 
-### 7. Verify - Checking authenticity and location
+### 6. Verify - Checking authenticity and location
 
 - Upload or choose a picture of the QR code containing the UAL
 - Enter claimed location
 - Click Generate Verification Prompt
 - Copy the prompt
 
-Picture 6
+![Picture 6](https://github.com/miodragstrak/materialize/blob/master/pictures/verify-part1.png)
 
 - Paste the verification prompt into the agent
 - Press Enter
 - The agent fetches the original KA from the DKG
 - Compares claimed location with ground-truth metadata
 
-Picture 7
+![Picture 7](https://github.com/miodragstrak/materialize/blob/master/pictures/verify-part2.png)
 
 ---
 
@@ -224,12 +218,12 @@ Picture 7
 
 Examples included:
 
-- `examples/publish.jsonld`  
-- `examples/update.json`  
-- `examples/verify.json`
+- [`examples/publish.jsonld` ](https://github.com/miodragstrak/materialize/blob/master/examples/publish.jsonld) 
+- [`examples/update.json` ](https://github.com/miodragstrak/materialize/blob/master/examples/update.jsonld) 
+- [`examples/verify.json`](https://github.com/miodragstrak/materialize/blob/master/examples/verify.jsonld)
 
 All located in:  
-📁 [`/examples`](examples/)
+📁 [`/examples`](https://github.com/miodragstrak/materialize/tree/master/examples)
 
 ---
 
@@ -266,6 +260,8 @@ Tokenomics part will cover:
 
 # 🔥 12. Summary
 
-Decentralized manufacturing.
-Verifiable production.
-Fighting Fake Fabrication.
+Materialize creates verifiable, decentralized manufacturing by connecting real machines (CNC, laser, 3D printers) with AI agents and the OriginTrail DKG. Every object produced receives a proof of production, intallation and verification, stored as Knowledge Assets on the DKG and linked through a scannable QR code.
+
+Our demo shows how a digital design becomes a physical object while the agent publishes, updates, and verifies the lifecycle on-chain.
+
+Materialize is the first step toward Decentralized Manufacturing - a global network of verified machines producing real-world objects on demand, with trust, provenance, and transparency built in.
