@@ -258,7 +258,8 @@ Tokenomics part will cover:
 ---
 
 # 🎥 11. Submission Video  
-(found in: `/video/demo.mp4`)
+
+[Scaling trust in the age of AI. Global Hackathon - Project Materialize](https://youtu.be/-J53FNANA4s?si=NVEfDr6ihZrtVaVc)
 
 ---
 
